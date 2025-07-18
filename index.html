@@ -126,7 +126,22 @@
       ctx.beginPath();
       ctx.moveTo(e.offsetX, e.offsetY);
     });
+<!-- Digital Eight for tracing -->
+<div id="digital-eight" style="margin:20px auto; width:120px; height:220px; position:relative;">
+  <div style="width:30px;height:30px;background:#000;border-radius:50%;position:absolute;top:0;left:45px;"></div>
+  <div style="width:30px;height:30px;background:#000;border-radius:50%;position:absolute;top:30px;left:0;"></div>
+  <div style="width:30px;height:30px;background:#000;border-radius:50%;position:absolute;top:30px;left:90px;"></div>
+  <div style="width:30px;height:30px;background:#000;border-radius:50%;position:absolute;top:60px;left:45px;"></div>
+  <div style="width:30px;height:30px;background:#000;border-radius:50%;position:absolute;top:120px;left:45px;"></div>
+  <div style="width:30px;height:30px;background:#000;border-radius:50%;position:absolute;top:150px;left:0;"></div>
+  <div style="width:30px;height:30px;background:#000;border-radius:50%;position:absolute;top:150px;left:90px;"></div>
+  <div style="width:30px;height:30px;background:#000;border-radius:50%;position:absolute;top:180px;left:45px;"></div>
+</div>
+<canvas id="tracePad" width="300" height="300"></canvas>
+  <button onclick="clearCanvas()">Clear Trace</button>
 
+
+    
     canvas.addEventListener('mousemove', (e) => {
       if (drawing) {
         ctx.lineTo(e.offsetX, e.offsetY);
