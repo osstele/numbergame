@@ -72,6 +72,31 @@
     button:hover {
       background-color: #0056b3;
     }
+
+    /* Digital eight styling */
+    #digital-eight {
+      margin: 20px auto;
+      width: 120px;
+      height: 220px;
+      position: relative;
+    }
+    #digital-eight .dot {
+      width: 30px;
+      height: 30px;
+      background: #000;
+      border-radius: 50%;
+      position: absolute;
+    }
+    /* Top circle (4 dots) */
+    #digital-eight .dot1 { top: 0; left: 45px; }
+    #digital-eight .dot2 { top: 30px; left: 0; }
+    #digital-eight .dot3 { top: 30px; left: 90px; }
+    #digital-eight .dot4 { top: 60px; left: 45px; }
+    /* Bottom circle (4 dots) */
+    #digital-eight .dot5 { top: 120px; left: 45px; }
+    #digital-eight .dot6 { top: 150px; left: 0; }
+    #digital-eight .dot7 { top: 150px; left: 90px; }
+    #digital-eight .dot8 { top: 180px; left: 45px; }
   </style>
 </head>
 <body>
@@ -81,6 +106,19 @@
   <div class="grid" id="numberGrid"></div>
 
   <div id="selectedNumber">Click a number to start tracing!</div>
+  
+  <!-- Digital Eight for tracing -->
+  <div id="digital-eight">
+    <div class="dot dot1"></div>
+    <div class="dot dot2"></div>
+    <div class="dot dot3"></div>
+    <div class="dot dot4"></div>
+    <div class="dot dot5"></div>
+    <div class="dot dot6"></div>
+    <div class="dot dot7"></div>
+    <div class="dot dot8"></div>
+  </div>
+
   <canvas id="tracePad" width="300" height="300"></canvas>
   <button onclick="clearCanvas()">Clear Trace</button>
 
@@ -126,22 +164,7 @@
       ctx.beginPath();
       ctx.moveTo(e.offsetX, e.offsetY);
     });
-<!-- Digital Eight for tracing -->
-<div id="digital-eight" style="margin:20px auto; width:120px; height:220px; position:relative;">
-  <div style="width:30px;height:30px;background:#000;border-radius:50%;position:absolute;top:0;left:45px;"></div>
-  <div style="width:30px;height:30px;background:#000;border-radius:50%;position:absolute;top:30px;left:0;"></div>
-  <div style="width:30px;height:30px;background:#000;border-radius:50%;position:absolute;top:30px;left:90px;"></div>
-  <div style="width:30px;height:30px;background:#000;border-radius:50%;position:absolute;top:60px;left:45px;"></div>
-  <div style="width:30px;height:30px;background:#000;border-radius:50%;position:absolute;top:120px;left:45px;"></div>
-  <div style="width:30px;height:30px;background:#000;border-radius:50%;position:absolute;top:150px;left:0;"></div>
-  <div style="width:30px;height:30px;background:#000;border-radius:50%;position:absolute;top:150px;left:90px;"></div>
-  <div style="width:30px;height:30px;background:#000;border-radius:50%;position:absolute;top:180px;left:45px;"></div>
-</div>
-<canvas id="tracePad" width="300" height="300"></canvas>
-  <button onclick="clearCanvas()">Clear Trace</button>
 
-
-    
     canvas.addEventListener('mousemove', (e) => {
       if (drawing) {
         ctx.lineTo(e.offsetX, e.offsetY);
